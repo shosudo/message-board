@@ -1,13 +1,21 @@
 class MessagesController < ApplicationController
+#ApplicationControllerというクラスを継承しているため、アクションに対応したviewを表示可能となる。 
+#ここで対応しているのは views/messages/index.html
+#Controllerの名前の最後の部分は複数形にする. ex) ClientsController, SiteAdminsController
+  
   def index
-    #@--- = インスタンス変数
     @message = Message.new
-    #Get all messages
+    #@--- = インスタンス変数
+    #Messageモデルのオブジェクトの初期化を行い、@messageに代入
+    
     @messages = Message.all
+    #Get all messages
   end
   
   def create
     @message = Message.new(message_params)
+    #message_paramsの内容をもとに、Messageモデルのインスタンスを生成し、変数@messageに代入
+    
     @message.save
     redirect_to root_path, notice:'saved a message'
   end

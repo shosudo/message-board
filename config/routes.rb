@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'messages#index'
+  #rootである/にアクセスした時に、MessageControllerのindexアクションで処理を行う
+  
   resources :messages , only: [:create]
+  #url: /messages, action: create, request: post,
+  #resources method はリソースの操作を可能にするURLを生成する
+  #what is :???
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
