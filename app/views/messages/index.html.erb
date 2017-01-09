@@ -16,18 +16,37 @@
     </div>
 </div>
 
-<%= form_for(@message) do |f| %>
-<%# form_for is called form_helper and it automatically generate a form to generate a model and edit it %>
-<%# @message is a Model "Message" which is generated at messages_controller's index method(action) %>
-<%# generated form tag => <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post"> %>
-    名前:
-    <%= f.text_field :name %>
-    <%# :name=属性名 %>
-    <%# <input type="text" name="message[name]" id="message_name" /> %>
-    
-    内容:
-    <%= f.text_field :body %>
-    
-    <%= f.submit %>
-    <%# <input type="submit" name="commit" value="Create Message" /> %>
-<% end %>
+<div class="form-horizontal" role="form">
+    <%= form_for(@message) do |f| %>
+    <%# form_for is called form_helper and it automatically generate a form to generate a model and edit it %>
+    <%# @message is a Model "Message" which is generated at messages_controller's index method(action) %>
+    <%# generated form tag => <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post"> %>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Name:
+            </div>
+            <div class="col-sm-8">
+                <%= f.text_field :name %>
+                <%# :name=属性名 %>
+                <%# <input type="text" name="message[name]" id="message_name" /> %>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-2">
+                Text:
+            </div>
+            <div class="col-sm-8">
+                <%= f.text_area :body, cols:"40" %>
+                <%# <input type="textarea" name="message[body]" id="message_body" /> %>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div clas="col-sm-10">
+                <%= f.submit %>
+                <%# <input type="submit" name="commit" value="Create Message" /> %>
+            </div>
+        </div>
+    <% end %>
+</div>
