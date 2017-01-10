@@ -22,29 +22,33 @@
     <%# @message is a Model "Message" which is generated at messages_controller's index method(action) %>
     <%# generated form tag => <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post"> %>
         <div class="form-group">
-            <div class="col-sm-2">
-                Name:
+            <div class="col-sm-1">
+                <%= f.label :name, "Name:", class:"form-control", %>
+                <%# ???元々name:だけだったものを、f.lableに変更。問題無し?+border消せないか??? %>
             </div>
-            <div class="col-sm-8">
-                <%= f.text_field :name %>
+            <div class="col-sm-5">
+                <%= f.text_field :name, :placeholder => "Enter your name", class:"form-control" %>
                 <%# :name=属性名 %>
+                <%# form-controlをつけるとBootstrapのスタイルを適応 %>
                 <%# <input type="text" name="message[name]" id="message_name" /> %>
             </div>
         </div>
         
         <div class="form-group">
-            <div class="col-sm-2">
-                Text:
+            <div class="col-sm-1">
+                <%= f.label :text, "Text:", class:"form-control" %>
             </div>
-            <div class="col-sm-8">
-                <%= f.text_area :body, cols:"40" %>
+            <div class="col-sm-5">
+                <%= f.text_area :body, :placeholder => "Enter a text", cols:"40", class:"form-control" %>
                 <%# <input type="textarea" name="message[body]" id="message_body" /> %>
             </div>
         </div>
         
         <div class="form-group">
-            <div clas="col-sm-10">
-                <%= f.submit %>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-5">
+                <%= f.submit "Tweet", class: "btn btn-primary" %>
                 <%# <input type="submit" name="commit" value="Create Message" /> %>
             </div>
         </div>
