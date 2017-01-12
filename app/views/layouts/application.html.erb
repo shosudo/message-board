@@ -4,28 +4,31 @@
 <head>
   <title>MessageBoard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <%# Load a CSS of bootstrap %>
-  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Message Board</a>
+  <div class="row">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Message Board</a>
+        </div>
+        <div class="collapse navbar-collapse" id="#">
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="#">TOP</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="#">
-        <ul class="nav navbar-nav navbar-right">
-         <li><a href="#">TOP</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <div class="container">
     <%= yield %>
     <%# Controllerが処理した内容を埋め込む %>
   </div>
+
 </body>
 </html>
