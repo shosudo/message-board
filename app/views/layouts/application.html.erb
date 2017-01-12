@@ -4,9 +4,9 @@
 <head>
   <title>MessageBoard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" type="text/css">
   <%# Load a CSS of bootstrap %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "custom", :media => "all" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,6 +29,10 @@
     <%= yield %>
     <%# Controllerが処理した内容を埋め込む %>
   </div>
+  
+  <footer>
+    <div class="copyright">© 2017 Sudo Sho</div>
+  </footer>
 
 </body>
 </html>

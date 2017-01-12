@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20170108135807) do
 
   create_table "messages", force: :cascade do |t|
+  #Introduction of the table "messages"
     t.string   "name"
     t.string   "body"
     t.datetime "created_at", null: false

@@ -16,8 +16,17 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     #message_paramsの内容をもとに、Messageモデルのインスタンスを生成し、変数@messageに代入
     
-    @message.save
-    redirect_to root_path, notice:'saved a message'
+    if @message.save
+      redirect_to root_path, notice:'メッセージを保存しました'
+    else
+      #Validationに引っかかり、Messageの保存に失敗した場合
+      @messages = Message.all
+      #Templateに利用するMessage.allを@messagesに渡す
+      flash.now[:alert] = "Failed to save message"
+      #エラーメッセージをflash.now[:alert]に代入
+      render 'index'
+    end
+    
   end
   
   private
