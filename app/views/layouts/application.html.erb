@@ -26,6 +26,12 @@
     </nav>
   </div>
   <div class="container">
+    <%# noticeがある場合は表示 %>
+    <% if notice %>
+      <div class="alert alert-info">
+        <%= notice %>
+      </div>
+    <% end %>
     <%= yield %>
     <%# Controllerが処理した内容を埋め込む %>
   </div>
