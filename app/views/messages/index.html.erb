@@ -17,55 +17,6 @@
 </div>
 
 <div class="form-horizontal" role="form">
-    <%= form_for(@message) do |f| %>
-    <%# form_for is called form_helper and it automatically generate a form to generate a model and edit it %>
-    <%# @message is a Model "Message" which is generated at messages_controller's index method(action) %>
-    <%# generated form tag => <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post"> %>
-        <% if @message.errors.present? %>
-            <div class="alert alert-danger">
-                <%= alert %>
-                <ul>
-                    <% @message.errors.full_messages.each do |full_message| %>
-                        <li>
-                            <%= full_message %>
-                        </li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        
-        <div class="form-group">
-            <div class="col-sm-1">
-                <label for="message_name" class="form-control">Name:</label>
-                <%# f.label :name, "Name:", class:"form-control" %>
-                <%# ???元々name:だけだったものを、f.lableに変更。問題無し?+border消せないか??? %>
-            </div>
-            <div class="col-sm-5">
-                <%= f.text_field :name, :placeholder => "Enter your name (maxlength is 20)", class:"form-control" %>
-                <%# :name=属性名 %>
-                <%# form-controlをつけるとBootstrapのスタイルを適応 %>
-                <%# <input type="text" name="message[name]" id="message_name" /> %>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <div class="col-sm-1">
-                <label for="message_body" class="form-control">Text:</label>
-                <%# f.label :text, "Text:", class:"form-control" %>
-            </div>
-            <div class="col-sm-5">
-                <%= f.text_area :body, :placeholder => "Enter a text (maxlength is 30)", :maxlength => "40" , class:"form-control" %>
-                <%# <input type="textarea" name="message[body]" id="message_body" /> %>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <div class="col-sm-1">
-            </div>
-            <div class="col-sm-5">
-                <%= f.submit "Tweet", class: "btn btn-primary" %>
-                <%# <input type="submit" name="commit" value="Create Message" /> %>
-            </div>
-        </div>
-    <% end %>
+    <%#部分テンプレートの読み込み.app/views/messages/_form.html.erb %>
+   <%= render 'form' %>
 </div>

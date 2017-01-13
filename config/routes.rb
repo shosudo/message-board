@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'messages#index'
   #rootである/にアクセスした時に、MessageControllerのindexアクションで処理を行う
   
-  resources :messages , only: [:create]
+  resources :messages , except: [:index, :new]
   #url: /messages, action: create, request: post,
   #resources method はリソースの操作を可能にするURLを生成する
   #what is :???
