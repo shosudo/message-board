@@ -52,7 +52,8 @@ class MessagesController < ApplicationController
   end
   
   def set_message
-    # @mmesageに編集しようとする投稿の内容をセット ??? params[:id] => URLで入力された@messageのparameter idが入力される
+    # @mmesageに編集しようとする投稿の内容をセット。 params[:id] => URLで入力された@messageのparameter idが入力される
+    #index.html.erbでクリックしたメッセージのidを取得(=params[:id])し、idからメッセージのインスタンスを取得している(Message.find() )
     @message = Message.find(params[:id])
   end
 end
