@@ -3,8 +3,8 @@ class MessagesController < ApplicationController
 #ここで対応しているのは views/messages/index.html
 #Controllerの名前の最後の部分は複数形にする. ex) ClientsController, SiteAdminsController
   
-  before_action :set_message, only: [:edit, :update]
-  #:edit,#updateのアクションの実行前に、set_message methodを行う
+  before_action :set_message, only: [:edit, :update, :destroy]
+  #:edit,:update,:destroyのアクションの実行前に、set_message methodを行う
   
   def index
     @message = Message.new
@@ -34,6 +34,11 @@ class MessagesController < ApplicationController
   end
   
   def edit
+  end
+  
+  def destroy
+    @message.destroy
+    redirect_to root_path, notice: 'Delete the Message'
   end
   
   def update
