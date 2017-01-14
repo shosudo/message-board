@@ -1,9 +1,37 @@
+/* bootstrapのような外部導入のcssをアプリケーション独自に全体で共通の変更したい場合 */
+
 body {
 font-size: 14px;
 padding-top: 70px; /*header固定用のpadding*/
 font-family:"メイリオ",Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',Osaka,"ＭＳ Ｐゴシック",sans-serif;
 }
 
+/* message-name/bodyを中央揃え */
+.text--center{
+vertical-align: middle;
+}
+
+/* marginでボタンの余白を設定 paddingでボタンサイズ調整 */
+.edit--expand{
+padding: 1px 1px 1px 1px;
+margin: 0px 0px 5px 0px;
+}
+
+.delete--expand{
+padding: 1px 1px 1px 1px;
+margin: 0px 0px 5px 5px;
+}
+
+.style-one {
+border: 0;
+border-bottom: 1px dashed #ccc;
+background: #999;
+}
+
+/* Formのラベルのテキストをセンタリング */
+.label--title--extend{
+text-align:center;
+}
 
 footer {
 margin-top: 10px;
@@ -17,3 +45,4 @@ padding: 20px 0;
 font-size: 12px;
 color: #666;
 }
+
