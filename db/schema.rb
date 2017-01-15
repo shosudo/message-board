@@ -8,17 +8,16 @@
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
-#
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108135807) do
+ActiveRecord::Schema.define(version: 20170115043259) do
 
   create_table "messages", force: :cascade do |t|
-  #Introduction of the table "messages"
     t.string   "name"
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "age"
   end
 
 end

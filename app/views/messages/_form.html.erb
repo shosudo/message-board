@@ -1,4 +1,4 @@
-<%# パーシャル(部分パーツ)としてフォームを切り出し。ファイル名は_から始まる %>
+<%# パーシャル(部分パーツ)としてフォームを切り出した。ファイル名は_から始まる %>
  <%= form_for(@message) do |f| %>
     <%# form_for is called form_helper and it automatically generate a form to generate a model and edit it %>
     <%# @message is a Model "Message" which is generated at messages_controller's index method(action) %>
@@ -15,12 +15,12 @@
                 </ul>
             </div>
         <% end %>
-        
         <div class="form-group">
-            <div class="col-sm-2">
-                <label for="message_name" class="form-control label--title--extend">Name:</label>
+            <div class="col-sm-1 control-label">
+            <%# control-labelがレスポンシブな水平フォームを作成 %>
+                <label for="message_name" class="">Name:</label>
                 <%# f.label :name, "Name:", class:"form-control" %>
-                <%# ???元々name:だけだったものを、f.lableに変更。問題無し?+border消せないか??? %>
+                <%# 元々name:だけだったものを、f.lableに変更。%>
             </div>
             <div class="col-sm-5">
                 <%= f.text_field :name, :placeholder => "Enter your name (maxlength is 20)", class:"form-control" %>
@@ -31,8 +31,19 @@
         </div>
         
         <div class="form-group">
-            <div class="col-sm-2">
-                <label for="message_body" class="form-control label--title--extend">Text:</label>
+            <div class="col-sm-1 control-label">
+                <label for="message_age" class="">Age:</label>
+                <%# f.label :name, "Name:", class:"form-control" %>
+                <%# 元々name:だけだったものを、f.lableに変更。%>
+            </div>
+            <div class="col-sm-5">
+                <%= f.number_field :age, :placeholder => "Enter your age (0-99)", class:"form-control" %>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-1 control-label">
+                <label for="message_body" class="">Text:</label>
                 <%# f.label :text, "Text:", class:"form-control" %>
             </div>
             <div class="col-sm-5">
@@ -42,9 +53,7 @@
         </div>
         
         <div class="form-group">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-5">
+            <div class="col-sm-offset-1 col-sm-5">
                 <%= f.submit "Tweet", class: "btn btn-primary" %>
                 <%# <input type="submit" name="commit" value="Create Message" /> %>
             </div>

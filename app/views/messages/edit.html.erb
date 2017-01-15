@@ -1,4 +1,8 @@
 <h1>Edit the Message</h1>    
 
-<%= render 'form' %>
 <%# set_message methodで遷移前に選択されたの@messageをform partialに渡しているため、formの:name, :bodyには@messageの内容が表示される %>
+
+<div class="form-horizontal" role="form">
+    <%#部分テンプレートの読み込み.app/views/messages/_form.html.erb %>
+   <%= render 'form' %>
+</div>

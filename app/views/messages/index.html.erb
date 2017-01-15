@@ -9,11 +9,13 @@
     
     <div class="panel-body">
         <% @messages.each_with_index do |message,i| %>
+        <%# @messages.each.with_index(1) do |message, i| %>
         <%# @messagesの配列を取得していく時に、index(i)も取得する。iは0から始まる。 %>
                 <hr class="style-one">
-                <br>
+                <%# hr is for border %>
                 <span class="label label-info col-sm-1 text--center"><%= message.name %></span>
-                <span class="col-sm-8 text--center"><%= message.body %></span>
+                <span class="col-sm-1 text--center"><%= message.age %>歳</span>
+                <span class="col-sm-7 text--center"><%= message.body %></span>
                 <%= link_to "Edit", edit_message_path(message), class: "btn btn-primary col-sm-1 btn-sm edit--expand" %>
                 <%= link_to "Delete", message, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm col-sm-1 delete--expand" %>
                 <%# link_to リンク名, リンクURL %>
@@ -21,7 +23,7 @@
                 <%# link_to "Edit",edit_message_path(message) = <a href="/messages/1/edit">Edit</a> %>
                 <br>
             <% if i == @messages.length - 1 %>
-            <%# ループ処理の最後だけ処理を行う %>
+            <%# ループ処理の最後だけ処理を行う。index-1=最後 %>
                 <hr class="style-one">
             <% end %>
         <% end %>

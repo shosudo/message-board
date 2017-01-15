@@ -15,7 +15,9 @@
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Message Board</a>
+          <%= link_to "Message Board", root_path, class: "navbar-brand" %>
+          <%# link_to is for anker tag. root_path is where user will move to %>
+          <%# <a class="navbar-brand" href="roor=path">Message Board</a> %>
         </div>
         <div class="collapse navbar-collapse" id="#">
           <ul class="nav navbar-nav navbar-right">
