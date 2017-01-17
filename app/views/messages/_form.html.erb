@@ -37,7 +37,7 @@
                 <%# 元々name:だけだったものを、f.lableに変更。%>
             </div>
             <div class="col-sm-5">
-                <%= f.number_field :age, :placeholder => "Enter your age (0-99)", class:"form-control" %>
+                <%= f.number_field :age, :placeholder => "Enter your age (maxage is 149)", class:"form-control" %>
             </div>
         </div>
         
@@ -47,7 +47,7 @@
                 <%# f.label :text, "Text:", class:"form-control" %>
             </div>
             <div class="col-sm-5">
-                <%= f.text_area :body, :placeholder => "Enter a text (maxlength is 30)", :maxlength => "40" , class:"form-control" %>
+                <%= f.text_area :body, :placeholder => "Enter a text (maxlength is 40)", :maxlength => "40" , class:"form-control" %>
                 <%# <input type="textarea" name="message[body]" id="message_body" /> %>
             </div>
         </div>
